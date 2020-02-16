@@ -21,6 +21,7 @@ public class Boletin19 {
         int[][] goles;
         int tamano1, tamano2;
         String[] equipos;
+        String nomb;
         Matriz m;
         Scanner sc;
         sc=new Scanner(System.in);
@@ -29,7 +30,16 @@ public class Boletin19 {
         m=new Matriz();
         m.insertarDatos(goles, equipos);
         m.mostrarDatos(goles, equipos);
-        
+        m.ListaEquipos(goles, equipos);
+        System.out.println("Mayor numero de goles por jornada:");
+        m.MaxGolesJor(equipos, goles);
+        System.out.println("Mayor numero de goles de la liga");
+        m.MaxGoles(equipos,goles);
+        System.out.println("Inserte nombre del equipo:");
+        nomb=sc.nextLine();
+        System.out.println("Inserte la jornada a consultar");
+        tamano1=sc.nextInt();
+        m.buscarDato(goles, equipos, nomb, tamano1);
     }
     
 }
